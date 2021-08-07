@@ -100,7 +100,7 @@ export const Overlay = styled.div`
   height: 100%;
   width: 100%;
   position: fixed;
-  left: 21rem;
+  left: 54rem;
   transition: left .75s ease-in-out;
   display: flex;
   flex-direction: column;
