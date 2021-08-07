@@ -1,0 +1,1 @@
+export const ROUTES = ['home', 'about', 'images', 'contact'];

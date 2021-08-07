@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import { style } from '../../Styles/colors';
 
 export const Wrapper = styled.div`
+  background: ${style.background};
+
   .fade-enter {
     opacity: 0.01;
   }
@@ -29,7 +32,7 @@ export const Wrapper = styled.div`
     top: 78px;
     left: 0;
     @media (max-width: 950px) {
-    top: 40px;
-  }
+    top: 56px;
+    }
   }
 `;
