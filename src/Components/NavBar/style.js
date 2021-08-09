@@ -1,6 +1,6 @@
 import styled,{ keyframes } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { colors } from '../../Styles/colors'
+import { colors, style } from '../../Styles/colors'
 
 const transitionHomePage =  keyframes`
   0% { opacity: 0 }
@@ -11,9 +11,7 @@ const transitionHomePage =  keyframes`
 `;
 
 export const NavContainer = styled.div`
-  position: absolute;
   padding-top: 18px;
-  z-index: 1;
   width: 100%;
 `;
 
@@ -100,6 +98,7 @@ export const Overlay = styled.div`
   height: 100%;
   width: 100%;
   position: fixed;
+  z-index: 1;
   left: 54rem;
   transition: left .75s ease-in-out;
   display: flex;

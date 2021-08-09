@@ -8,10 +8,13 @@ import About from '../About';
 import Home from '../Home';
 import Image from '../Image';
 import Contact from '../Contact';
+import Footer from '../Footer';
 
 // styles 
 import { 
-  Wrapper
+  PageWrapper,
+  ContentWrapper,
+  Section
 } from './style';
 
 // Error Handler
@@ -25,11 +28,12 @@ const My404 = () => {
 
 function App({ location }) {
   return (
-    <Wrapper className="App-Wrapper">
+    <PageWrapper>
     <NavBar />
+    <ContentWrapper>
     <TransitionGroup className="transition-group">
     <CSSTransition key={location.key} timeout={{ enter: 300, exit: 300 }} classNames="fade">
-    <section className="route-section">
+    <Section className="route-section">
     <Switch>
       <Route exact path='/' render={() => <Home /> }  />
       <Route exact path='/home' render={() => <Home /> }  />
@@ -37,11 +41,13 @@ function App({ location }) {
       <Route exact path='/images' render={() => <Image />} />
       <Route exact path='/contact' render={() => <Contact />} />
       <Route component={ My404 } />
-    </Switch>
-    </section>
+      </Switch>
+    <Footer />
+    </Section>
     </CSSTransition>
     </TransitionGroup>
-    </Wrapper>
+    </ContentWrapper>
+    </PageWrapper>
   );
 }
 export default withRouter(App);

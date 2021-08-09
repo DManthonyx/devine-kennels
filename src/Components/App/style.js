@@ -1,9 +1,12 @@
-import styled from 'styled-components';
-import { style } from '../../Styles/colors';
+import styled from 'styled-components'
 
-export const Wrapper = styled.div`
-  background: ${style.background};
+export const Section = styled.section`
+`
 
+export const PageWrapper = styled.div`
+`
+
+export const ContentWrapper = styled.div`
   .fade-enter {
     opacity: 0.01;
   }
@@ -29,10 +32,9 @@ export const Wrapper = styled.div`
   section.route-section {
     position: absolute;
     width: 100%;
-    top: 78px;
     left: 0;
-    @media (max-width: 950px) {
-    top: 56px;
-    }
+    // @media (max-width: 499px) {
+    //    width: auto;
+    // }
   }
 `;

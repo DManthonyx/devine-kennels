@@ -3,10 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { colors } from '../../Styles/colors';
 
 export const Wrapper = styled.div`
-    height: calc(100vh - 56px);
+    height: 90vh;
     display: flex;
     justify-content: center;
-    padding-top: 29px;
 `
 export const Div = styled.div`
     display: flex;
@@ -40,7 +39,7 @@ export const Button = styled.button`
     border-radius: 8px;
     border: 0px;
     background: ${colors.black};
-    color: ${colors.darkGold};
+    color: ${colors.white};
     font-size: 1.2em;
     &:focus {
         outline: none;
