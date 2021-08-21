@@ -12,7 +12,7 @@ const transitionHomePage =  keyframes`
 
 export const NavContainer = styled.div`
   padding-top: 18px;
-  width: 100%;
+  width: 100%;e
 `;
 
 export const NavRowMid = styled.div`
@@ -43,21 +43,17 @@ export const NavRowLeft = styled.div`
   width: 25%;
 `;
 
-export const Logo = styled.img`
-  width: 88px;
-  height: 84px;
-  @media (max-width: 700px) {
-    width: 78px;
-    height: 64px;
-  }
+export const Img = styled.img`
+  width: 133px;
+  margin-top: 50px;
 `
 
 export const Title = styled.h1`
   font-size: 2.5em;
-  color: ${colors.main};
+  font-family: Wynter;
+  color: ${colors.black};
   display: flex;
   align-items: center;
-  padding-left: 42px;
 `;
 
 export const Link = styled(NavLink)`
@@ -81,16 +77,16 @@ export const HamLink = styled(NavLink)`
   text-decoration: none;
   padding: 15px;
   text-transform: uppercase;
-  color: white;
+  color: ${colors.black};
   &:hover {
 
   }
   &.active{
-    border-bottom: 1px solid #f5c303;
+    border-bottom: 1px solid ${colors.red};
   }
   .show > &.active {
     border-bottom: none;
-    color: gold;
+    color: ${colors.red};
   }
 `;
 
@@ -104,7 +100,7 @@ export const Overlay = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${colors.black};
+  background: ${colors.white};
   &.show {
     left: 0;
   }
@@ -114,8 +110,7 @@ export const Overlay = styled.div`
 `;
 
 export const Ul = styled.ul`
-  padding-right: 18px;
-  background: ${colors.black};
+  background: ${colors.white};
   text-align: center;
 `
 

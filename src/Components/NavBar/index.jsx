@@ -12,10 +12,11 @@ import {
     NavRow,
     Ul,
     Li,
+    Title,
     Link,
     HamLink,
     Overlay,
-    Logo,
+    Img,
     NavRowLeft,
     NavRowMid,
     NavRowRight,
@@ -47,7 +48,9 @@ const NavBar = (props) => {
         <Hamburger setIsOpen={setIsOpen} isOpen={isOpen}/>
       </NavRow>
       <Overlay className={isOpen ? "show" : "hide"}>
+
         <Ul>
+          <Title>Devine Kennels</Title>
             {
               ROUTES.map((route, i) =>
                 <Li onClick={() => setIsOpen(!isOpen)} key={i}>
@@ -56,6 +59,7 @@ const NavBar = (props) => {
               )
             }
         </Ul>
+        <Img src="https://i.imgur.com/JUELsI2.png" title="Devine Kennels, Frenchies, puppies, animals" />
       </Overlay>
     </NavContainer>
   );
