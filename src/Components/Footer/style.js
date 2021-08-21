@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { colors } from '../../Styles/colors';
 import { Instagram } from '@styled-icons/boxicons-logos/Instagram';
 import { EmailOutline } from '@styled-icons/evaicons-outline/EmailOutline';
+import { Youtube } from '@styled-icons/remix-line/Youtube'
 
 export const Wrapper = styled.div`
     // background: ${colors.black};
@@ -21,8 +22,10 @@ export const Section = styled.section`
     &.sec-two {
         width: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding-left: 10px;
     }
 `
     
@@ -32,6 +35,9 @@ export const Div = styled.div`
         border-top: 1px solid ${colors.black};
         margin: 0px 10px;
     }
+    &.sec-two-div {
+        width: 100%;
+    }
 `
 
 export const H1 = styled.h1`
@@ -39,7 +45,8 @@ export const H1 = styled.h1`
 `
 
 export const P = styled.p`
-
+    text-transform: uppercase;
+    font-size: 12px;
 `
 
 export const Img = styled.img`
@@ -63,10 +70,16 @@ export const Button = styled.button`
 
 `
 
+// Icons
+
 export const InstaIcon = styled(Instagram)`
     color: inherit;
 `
 
 export const EmailIcon = styled(EmailOutline)`
+    color: inherit;
+`
+
+export const YouTubeIcon = styled (Youtube)`
     color: inherit;
 `

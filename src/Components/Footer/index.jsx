@@ -13,6 +13,7 @@ import {
     A,
     InstaIcon,
     EmailIcon,
+    YouTubeIcon,
 } from './style';
 
 const Footer = () => {
@@ -23,13 +24,19 @@ const Footer = () => {
                 <H1>Devine <br /> Kennels</H1>
             </Section>
             <Section className="sec-two">
-                <Div>
+                <Div className="sec-two-div">
                     <A href="https://www.instagram.com/devine_kennels/">
                         <InstaIcon></InstaIcon>
+                    </A>
+                    <A href="https://www.instagram.com/devine_kennels/">
+                        <YouTubeIcon></YouTubeIcon>
                     </A>
                     <A href="mailto: dmanthonycoding@gmail.com">
                         <EmailIcon></EmailIcon>
                     </A>
+                </Div>
+                <Div className="sec-two-div">
+                    <P>&#169; 2021 by devine kennels inc<br />all rights reserved</P>
                 </Div>
             </Section>
         </Div>
