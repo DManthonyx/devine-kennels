@@ -10,7 +10,6 @@ import Image from '../Image';
 import Contact from '../Contact';
 import Footer from '../Footer';
 
-// styles 
 import { 
   PageWrapper,
   ContentWrapper,

@@ -18,6 +18,7 @@ import {
 const Footer = () => {
     return (
         <Wrapper className="Footer-Wrapper">
+        <Div className="align-wrapper">
             <Section className="sec-one">
                 <H1>Devine <br /> Kennels</H1>
             </Section>
@@ -31,6 +32,7 @@ const Footer = () => {
                     </A>
                 </Div>
             </Section>
+        </Div>
         </Wrapper>
     )
 }
