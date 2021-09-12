@@ -12,7 +12,7 @@ import {
     NavRow,
     Ul,
     Li,
-    Title,
+    H1,
     Link,
     HamLink,
     Overlay,
@@ -29,28 +29,28 @@ import {
 const NavBar = (props) => {
   const [ isOpen, setIsOpen ] = useState(false);
   const [ isHidden, setIsHidden ] = useState(false);
-  const [ isHome, setIsHome ] = useState('false');
+  const [ isHome, setIsHome ] = useState(false);
 
   useEffect(() => {
     let { pathname } = props.location;
     if(pathname === '/home' || pathname === '/') {
-      setIsHome('true')
+      setIsHome(true)
     } else {
-      setIsHome('false')
+      setIsHome(false)
     }
   },[props.location]);
 
   window.onresize = () =>  (window.innerWidth > 900 && isOpen) && setIsOpen(false);
-
+  console.log(isHome, isOpen, 'props')
   return (
       <NavContainer className="NavContainer" visible={isHidden}>
       <NavRow>
+        <H1 className="modal-nav" isHome={isHome} isOpen={isOpen}>Devine Kennels</H1>
         <Hamburger setIsOpen={setIsOpen} isOpen={isOpen}/>
       </NavRow>
       <Overlay className={isOpen ? "show" : "hide"}>
-
         <Ul>
-          <Title>Devine Kennels</Title>
+          <H1 className="modal" isHome={isHome} isOpen={isOpen}>Devine Kennels</H1>
             {
               ROUTES.map((route, i) =>
                 <Li onClick={() => setIsOpen(!isOpen)} key={i}>

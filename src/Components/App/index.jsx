@@ -9,6 +9,7 @@ import Home from '../Home';
 import Image from '../Image';
 import Contact from '../Contact';
 import Footer from '../Footer';
+import Admin from '../Admin';
 
 import { 
   PageWrapper,
@@ -39,6 +40,7 @@ function App({ location }) {
       <Route exact path='/about' render={() => <About />}  />
       <Route exact path='/images' render={() => <Image />} />
       <Route exact path='/contact' render={() => <Contact />} />
+      <Route exact path='/devinekennels/admin/1' render={() => <Admin />} />
       <Route component={ My404 } />
       </Switch>
     <Footer />

@@ -48,12 +48,32 @@ export const Img = styled.img`
   margin-top: 50px;
 `
 
-export const Title = styled.h1`
-  font-size: 2.5em;
-  font-family: Wynter;
-  color: ${colors.black};
-  display: flex;
-  align-items: center;
+const fadeIn = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  `
+  
+const fadeOut = keyframes`  
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+`
+
+export const H1 = styled.h1`
+font-family: Wynter;
+&.modal-nav {
+  text-shadow: 0 0 red;
+  padding-left 8px;
+  animation-name: ${props => props.isOpen === false && props.isHome === false ? fadeIn : fadeOut};
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+padding-left: 8px;
+&.modal {
+    font-size: 2.5em;
+    color: ${colors.black};
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const Link = styled(NavLink)`
