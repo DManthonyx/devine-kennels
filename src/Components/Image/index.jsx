@@ -7,7 +7,7 @@ import React from 'react';
 const Image = () => {
   return (
     <div>
-        Image
+        desinty
     </div>
   )
 }
