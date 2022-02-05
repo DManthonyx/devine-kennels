@@ -17,9 +17,9 @@ const Home = () => {
     <Wrapper className="Home-Wrapper">
       <Div className="">
         <Img src="https://i.imgur.com/JUELsI2.png" className="logo" alt="Devin Kennels Frenchies" /> 
-          <Link exact to="/images">
-            see puppies
-          </Link>
+        <Link exact to="/images">
+          see puppies
+        </Link>
       </Div>
     </Wrapper>
   )

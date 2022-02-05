@@ -12,7 +12,8 @@ const transitionHomePage =  keyframes`
 
 export const NavContainer = styled.div`
   padding-top: 18px;
-  width: 100%;e
+  width: 100%;
+  margin-bottom: 20px;
 `;
 
 export const NavRowMid = styled.div`
@@ -60,10 +61,11 @@ const fadeOut = keyframes`
 
 export const H1 = styled.h1`
 font-family: Wynter;
+text-shadow: 0 0 red;
 &.modal-nav {
-  text-shadow: 0 0 red;
   padding-left 8px;
-  animation-name: ${props => props.isOpen === false && props.isHome === false ? fadeIn : fadeOut};
+  opacity: 0;
+  animation-name: ${props => props.isOpen === true ? fadeOut : fadeIn};
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }

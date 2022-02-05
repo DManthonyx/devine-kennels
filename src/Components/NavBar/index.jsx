@@ -29,19 +29,19 @@ import {
 const NavBar = (props) => {
   const [ isOpen, setIsOpen ] = useState(false);
   const [ isHidden, setIsHidden ] = useState(false);
-  const [ isHome, setIsHome ] = useState(false);
+  const [ isHome, setIsHome ] = useState(true);
 
-  useEffect(() => {
-    let { pathname } = props.location;
-    if(pathname === '/home' || pathname === '/') {
-      setIsHome(true)
-    } else {
-      setIsHome(false)
-    }
-  },[props.location]);
+  // useEffect(() => {
+  //   let { pathname } = props.location;
+  //   if(pathname === '/home' || pathname === '/') {
+  //     setIsHome(!true)
+  //   } else {
+  //     setIsHome(!false)
+  //   }
+  // },[props.location]);
 
   window.onresize = () =>  (window.innerWidth > 900 && isOpen) && setIsOpen(false);
-  console.log(isHome, isOpen, 'props')
+  // console.log(isHome, isOpen, 'props')
   return (
       <NavContainer className="NavContainer" visible={isHidden}>
       <NavRow>

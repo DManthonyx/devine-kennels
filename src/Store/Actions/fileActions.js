@@ -1,49 +1,21 @@
-export const CreateArticle = (payload) => {
+export const UploadImage = (payload) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
+        console.log(payload, 'paylaod <<<')
         const firebase = getFirebase();
         const firestore = getFirestore();
-        firestore.collection('articles').add({
-            name: payload.name,
-            date: payload.date,
-            title: payload.title,
-            article: payload.article
-        }).then((messageRef) => {
-            let filePath = `articles/${messageRef.id}/${payload.image.name}`;
-            firebase.storage().ref(filePath).put(payload.image);
-        }).catch(err => {
-            console.log({err}, 'from article action');
-        });
-    };
-};
-
-export const GetAllArticles = () => {
-    return (dispatch, getState, { getFirebase, getFirestore }) => {
-        try {
-            const data = [];
-            const firestore = getFirestore();
-            firestore.collection('articles').get()
-            .then(function(querySnapshot) {
-                querySnapshot.forEach(function(doc) {
-                    let result = doc.data();
-                    result['id'] = doc.id;
-                    data.push(result);
-                });
-            }).then(() => {
-                dispatch({type: 'GET_ALL_ARTICLES', data});
-            });
-        } catch(err) {
-            console.log({err});
-        };
-    };
-};
-
-export const UpdateCurrentArticle = (article) => {
-    return (dispatch, getState) => {
-        try {
-            const data = article;
-            dispatch({type: 'UPDATE_CURRENT_ARTICLE', data});
-        } catch(err) {
-            console.log({err});
-        }
+        console.log(firebase, 'firebase <<<')
+        console.log(firestore, 'firestore <<<')
+        const uploadImage = firebase.storage.ref(`images/${payload.name}`).put(payload)
+        uploadImage.on('state_changes', (snapShot) => {
+            console.log(snapShot, 'snapShot <<<')
+        }, (err) => {
+            console.log(err, 'error FB storage <<<')
+        },() => {
+            firebase.storage.ref('images').child(payload.name).getDownloadURL().then(imgUrl => {
+                return imgUrl;
+            }).catch(err => {
+                console.log(err, 'error from URL <<<')
+            })
+        })
     };
 };
